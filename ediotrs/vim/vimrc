@@ -72,6 +72,8 @@ nmap ss <Plug>(easymotion-sn)
 nmap <F8> :TagbarToggle<CR>
 
 call plug#begin()
+" dashboard
+Plug 'mhinz/vim-startify'
 " theme
 Plug 'morhetz/gruvbox'
 " statusline
