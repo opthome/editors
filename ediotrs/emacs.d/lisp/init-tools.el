@@ -20,5 +20,15 @@
   :ensure t
   :init (which-key-mode))
 
+; cd ~
+; npm install mathjax-node-cli
+(use-package org-latex-impatient
+  :defer t
+  :hook (org-mode . org-latex-impatient-mode)
+  :init
+  (setq org-latex-impatient-tex2svg-bin
+        ;; location of tex2svg executable
+        "~/node_modules/mathjax-node-cli/bin/tex2svg"))
+
 
 (provide 'init-tools)
