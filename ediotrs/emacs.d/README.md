@@ -111,7 +111,6 @@ package-install ; 输入插件名安装相应插件
 package-delete  ; 删除插件
 ```
 ### steps
-
 ```lisp
 ; 1、将package代码添加到配置文件中
 ; 2、安装 use-package，在 use-package 中
@@ -210,6 +209,24 @@ markdown-mode ; 自带，打开markdown文档自动使用
 		;   :ensure t
 		;   :init
 		;   (elpy-enable))
+```
+## 跨文件搜索替换
+```lisp
+; 跨文件批量搜索替换
+; https://emacs-china.org/t/emacs-consult-embark-wgrep/23542
+; 打开 Emacs，按以下步骤操作：
+
+; 1.  C-c r e 调用 consult-grep 并输入 suliveevil-test 进行搜索   
+; 2.  H-o 调用 embark-export 将结果从 minibuffer 导出到 buffer（grep-mode）    
+; 3.  C-c C-q 调用 wgrep-change-to-wgrep-mode 将 buffer 的模式从 grep-mode 切换为 wgrep-mode 
+; 4.  M-% 调用 query-replace 进行批量替换，输入 旧的内容 回车，然后输入 新的内容 回车
+; 5.  依次按下 y 或 n 对每个替换选项进行确认，或按下 ! 对全部结果进行替换。 
+; 6.  替换结束后，C-c C-c 调用 wgrep-finish-edit 结束编辑。
+
+; 快捷键
+("C-c r e" . consult-grep)
+("H-o" . embark-export)
+("C-c C-q" . wgrep-change-to-wgrep-mode)
 ```
 # 快捷键
 *按生效优先级排序*
